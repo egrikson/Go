@@ -1,0 +1,20 @@
+# Скомпилированные бинарники
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Файлы тестов
+*.test
+*.out
+
+# Рабочие файлы Go
+go.work
+go.work.sum
+
+# IDE и ОС
+.idea/
+.vscode/
+Thumbs.db
+desktop.ini
