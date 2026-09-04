@@ -19,16 +19,16 @@ import "fmt"
 
 func main() {
 	const (
-		Monday    int = 0
-		Tuesday       = iota
-		Wednesday     = iota
-		Thursday      = iota
-		Friday        = iota
-		Saturday      = iota
-		Sunday        = iota
+		Monday = iota
+		Tuesday
+		Wednesday
+		Thursday
+		Friday
+		Saturday
+		Sunday
 	)
 
-	fmt.Println("Tuesday", Tuesday)
-	fmt.Println("Thursday", Thursday)
-	fmt.Println("Saturday", Saturday)
+	fmt.Println("Tuesday:", Tuesday)
+	fmt.Println("Thursday:", Thursday)
+	fmt.Println("Saturday:", Saturday)
 }

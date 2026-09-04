@@ -33,18 +33,18 @@ func main() {
 		BaseLimit     int = 50
 		BronzeLimit       = BaseLimit
 		SilverLimit       = BaseLimit
-		GoldLimit         = 200
+		GoldLimit     int = 200
 		PlatinumLimit     = GoldLimit
 	)
 
 	limit := SilverLimit
 
-	fmt.Println("BaseLimit", BaseLimit)
-	fmt.Println("BronzeLimit", BronzeLimit)
-	fmt.Println("SilverLimit", SilverLimit)
-	fmt.Println("GoldLimit", GoldLimit)
-	fmt.Println("PlatinumLimit", PlatinumLimit)
-	fmt.Println("limit value", limit)
-	fmt.Printf("limit type: %T", limit)
+	fmt.Println("BaseLimit:", BaseLimit)
+	fmt.Println("BronzeLimit:", BronzeLimit)
+	fmt.Println("SilverLimit:", SilverLimit)
+	fmt.Println("GoldLimit:", GoldLimit)
+	fmt.Println("PlatinumLimit:", PlatinumLimit)
+	fmt.Println("limit value:", limit)
+	fmt.Printf("limit type: %T\n", limit)
 
 }

@@ -17,5 +17,16 @@ package main
 import "fmt"
 
 func main() {
+	const (
+		A = iota
+		B
+		C
+	)
 
+	const (
+		X = iota
+		Y
+	)
+
+	fmt.Printf("A=%d B=%d C=%d X=%d Y=%d\n", A, B, C, X, Y)
 }

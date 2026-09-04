@@ -21,7 +21,7 @@ import "fmt"
 func main() {
 	const (
 		Guest int = 1
-		User int = 2
+		User  int = 2
 		Admin int = 3
 	)
 
