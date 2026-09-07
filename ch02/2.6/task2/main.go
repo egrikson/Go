@@ -20,6 +20,14 @@
 // Запуск: go run ./ch02/2.6/task2
 package main
 
-func main() {
+import "fmt"
 
+func main() {
+	var budgetInt int = 1000
+	var countInt int = 3
+	var budgetFloat float64 = 1000
+	var countFloat float64 = 3
+
+	fmt.Printf("Целочисленное деление: %d, остаток: %d\n", budgetInt/countInt, budgetInt%countInt)
+	fmt.Printf("Вещественное деление: %.2f\n", budgetFloat/countFloat)
 }

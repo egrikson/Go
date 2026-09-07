@@ -14,6 +14,9 @@
 // Запуск: go run ./ch02/2.6/task4
 package main
 
-func main() {
+import "fmt"
 
+func main() {
+	const n int = 487
+	fmt.Printf("Сумма цифр числа %d: %d", n, n/10%10+n/100+n%10)
 }

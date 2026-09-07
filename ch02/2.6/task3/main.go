@@ -19,6 +19,17 @@
 // Запуск: go run ./ch02/2.6/task3
 package main
 
-func main() {
+import "fmt"
 
+func main() {
+	const totalSeconds int = 7325
+	var hours int = totalSeconds / 3600
+	var minutes int = totalSeconds / 60 % 60
+	var seconds int = totalSeconds % 60
+
+	fmt.Printf("%d секунд = %dч %dм %dс\n", totalSeconds, hours, minutes, seconds)
+
+	seconds--
+
+	fmt.Printf("Секундой раньше: %dч %dм %dс\n", hours, minutes, seconds)
 }
