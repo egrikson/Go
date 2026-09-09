@@ -26,14 +26,14 @@ func main() {
 	fmt.Printf("x += 15: %d\n", x)
 
 	x -= 8
-	fmt.Printf("x -= 15: %d\n", x)
+	fmt.Printf("x -= 8: %d\n", x)
 
 	x *= 3
-	fmt.Printf("x *= 15: %d\n", x)
+	fmt.Printf("x *= 3: %d\n", x)
 
 	x /= 4
-	fmt.Printf("x /= 15: %d\n", x)
+	fmt.Printf("x /= 4: %d\n", x)
 
 	x %= 7
-	fmt.Printf("x %%= 15: %d\n", x)
+	fmt.Printf("x %%= 7: %d\n", x)
 }
