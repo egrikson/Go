@@ -25,7 +25,37 @@
 // Запуск: go run ./block01/functions-return/task2
 package main
 
+import "fmt"
+
 func main() {
 	var data = [5]int{12, 45, 7, 23, 38}
-	_ = data
+
+	fmt.Println("Сумма:", sum(data))
+	fmt.Println("Максимум:", maxOf(data))
+	fmt.Println("Среднее:", average(data))
+}
+
+func sum(numbers [5]int) int {
+	var sum int = 0
+
+	for _, value := range numbers {
+		sum += value
+	}
+	return sum
+}
+
+func maxOf(numbers [5]int) int {
+	var maxNumbers int = numbers[0]
+
+	for _, value := range numbers {
+		if value > maxNumbers {
+			maxNumbers = value
+		}
+	}
+
+	return maxNumbers
+}
+
+func average(numbers [5]int) int {
+	return sum(numbers) / len(numbers)
 }

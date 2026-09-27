@@ -32,6 +32,24 @@
 // Запуск: go run ./block01/functions-return/task3
 package main
 
-func main() {
+import "fmt"
 
+func main() {
+	fmt.Println("2024:", isLeap(2024))
+	fmt.Println("1900:", isLeap(1900))
+	fmt.Println("2000:", isLeap(2000))
+	fmt.Println("2023:", isLeap(2023))
+	fmt.Println("2100:", isLeap(2100))
+}
+
+func isLeap(year int) bool {
+	if year%400 == 0 {
+		return true
+	} else if year%100 == 0 {
+		return false
+	} else if year%4 == 0 {
+		return true
+	} else {
+		return false
+	}
 }

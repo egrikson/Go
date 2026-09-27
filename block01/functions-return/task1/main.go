@@ -22,6 +22,17 @@
 // Запуск: go run ./block01/functions-return/task1
 package main
 
-func main() {
+import "fmt"
 
+func main() {
+	fmt.Println("Площадь:", area(7, 4))
+	fmt.Println("Периметр:", perimeter(7, 4))
+}
+
+func area(w, h int) int {
+	return w * h
+}
+
+func perimeter(w, h int) int {
+	return (w + h) * 2
 }

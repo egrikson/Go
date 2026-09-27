@@ -30,6 +30,19 @@
 // Запуск: go run ./block01/functions-return/task4
 package main
 
-func main() {
+import "fmt"
 
+func main() {
+	fmt.Println("7 ->", digitSum(7))
+	fmt.Println("493 ->", digitSum(493))
+	fmt.Println("10 ->", digitSum(10))
+	fmt.Println("99999 ->", digitSum(99999))
+}
+
+func digitSum(n int) int {
+	if n < 10 {
+		return n
+	} else {
+		return (n % 10) + digitSum(n/10)
+	}
 }
