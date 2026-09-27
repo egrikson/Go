@@ -34,8 +34,8 @@ import (
 )
 
 func main() {
-	list_bay := [5]int{3, 7, 5, 2, 6}
-	printChart(list_bay)
+	sales := [5]int{3, 7, 5, 2, 6}
+	printChart(sales)
 }
 
 func printBar(day int, value int) {

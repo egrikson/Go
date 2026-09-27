@@ -36,24 +36,24 @@ func main() {
 }
 
 func sum(numbers [5]int) int {
-	var sum int = 0
+	var total int
 
 	for _, value := range numbers {
-		sum += value
+		total += value
 	}
-	return sum
+	return total
 }
 
 func maxOf(numbers [5]int) int {
-	var maxNumbers int = numbers[0]
+	maxValue := numbers[0]
 
 	for _, value := range numbers {
-		if value > maxNumbers {
-			maxNumbers = value
+		if value > maxValue {
+			maxValue = value
 		}
 	}
 
-	return maxNumbers
+	return maxValue
 }
 
 func average(numbers [5]int) int {

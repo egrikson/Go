@@ -26,26 +26,23 @@ package main
 import "fmt"
 
 func main() {
-	list_1 := [5]int{4, 8, 15, 16, 23}
-	printStats(list_1)
-
-	list_2 := [5]int{7, 7, 7, 7, 7}
-	printStats(list_2)
+	printStats([5]int{4, 8, 15, 16, 23})
+	printStats([5]int{7, 7, 7, 7, 7})
 }
 
 func printStats(list [5]int) {
-	var count int = 0
-	var max_list = list[0]
+	var total int
+	maxValue := list[0]
 
-	for i := 0; i < len(list); i++ {
-		count += list[i]
+	for _, value := range list {
+		total += value
 
-		if list[i] > max_list {
-			max_list = list[i]
+		if value > maxValue {
+			maxValue = value
 		}
 	}
 
 	fmt.Println("Массив:", list)
-	fmt.Println("Сумма:", count)
-	fmt.Println("Максимум:", max_list)
+	fmt.Println("Сумма:", total)
+	fmt.Println("Максимум:", maxValue)
 }

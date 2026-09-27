@@ -42,7 +42,6 @@ func main() {
 func digitSum(n int) int {
 	if n < 10 {
 		return n
-	} else {
-		return (n % 10) + digitSum(n/10)
 	}
+	return n%10 + digitSum(n/10)
 }

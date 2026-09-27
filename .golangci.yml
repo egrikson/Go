@@ -1,0 +1,50 @@
+version: "2"
+
+# Конфиг под учебный репозиторий: ловим то, что мешает привыкнуть
+# к Go, и молчим про то, что имеет смысл только в боевом коде.
+
+run:
+  # ch02 — архив задач по metanit. Часть файлов намеренно кривая
+  # (например, задача про структуру программы с точками с запятой),
+  # форматировать и править их нельзя.
+  build-tags: []
+
+linters:
+  enable:
+    # имена: snake_case, ALL_CAPS, врущие аббревиатуры
+    - revive
+    # объявлено и не используется
+    - unused
+    # упрощения: лишние else, избыточные сравнения с true/false
+    - staticcheck
+
+  settings:
+    revive:
+      rules:
+        - name: var-naming
+        - name: indent-error-flow
+        - name: bool-literal-in-expr
+    staticcheck:
+      checks:
+        - all
+        # ST1023 требует var a = 18 вместо var a int = 18.
+        # Формально верно, но явный тип — не ошибка, а именно так
+        # пишут в metanit и в заготовках задач. Иначе 66 находок
+        # шума на 4 полезных.
+        - -ST1023
+        - -QF1011
+
+  exclusions:
+    paths:
+      - ch02
+
+formatters:
+  enable:
+    - gofmt
+  exclusions:
+    paths:
+      - ch02
+
+issues:
+  max-issues-per-linter: 0
+  max-same-issues: 0
