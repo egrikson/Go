@@ -32,13 +32,7 @@ func main() {
 }
 
 func stats(nums ...int) (int, int, int) {
-	if len(nums) == 0 {
-		return 0, 0, 0
-	}
-
-	var sumNums int
-	var countEven int
-	var countNegative int
+	var sumNums, countEven, countNegative int
 
 	for _, value := range nums {
 		sumNums += value

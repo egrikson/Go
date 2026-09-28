@@ -42,11 +42,16 @@ func main() {
 }
 
 func join(sep string, parts ...string) string {
-	// TODO
-	return ""
+	var stringJoin string
+	for i, value := range parts {
+		if i > 0 {
+			stringJoin += sep
+		}
+		stringJoin += value
+	}
+	return stringJoin
 }
 
 func path(parts ...string) string {
-	// TODO
-	return ""
+	return join("/", parts...)
 }
