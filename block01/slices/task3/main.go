@@ -25,14 +25,38 @@
 // Запуск: go run ./block01/slices/task3
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 func main() {
 	arr := [8]int{1, 2, 3, 4, 5, 6, 7, 8}
+	sliceSquare := arr[0:5]
+	sliceMakeAdder := arr[3:8]
 
-	// TODO
+	forEach(sliceSquare, square)
+	fmt.Printf("После квадратов: %v\n", arr)
+
+	forEach(sliceMakeAdder, makeAdder())
+	fmt.Printf("После прибавки: %v\n", arr)
+
+	fmt.Printf("Первый срез: %v\n", sliceSquare)
+}
+
+func makeAdder() func(int) int {
+	count := 0
+	return func(x int) int {
+		count++
+		return x + count
+	}
+}
+
+func square(n int) int {
+	return n * n
 }
 
 func forEach(s []int, f func(int) int) {
-	// TODO
+	for i, value := range s {
+		s[i] = f(value)
+	}
 }

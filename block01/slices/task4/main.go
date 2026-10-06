@@ -24,10 +24,18 @@ import "fmt"
 
 func main() {
 	arr := [7]int{10, 20, 30, 40, 50, 60, 70}
+	shiftLeft(arr[1:5])
+	fmt.Println(arr)
+	shiftLeft(arr[3:7])
+	fmt.Println(arr)
 
-	// TODO
 }
 
 func shiftLeft(s []int) {
-	// TODO
+	for i := range s {
+		if i == 0 {
+			continue
+		}
+		s[i-1], s[i] = s[i], s[i-1]
+	}
 }
