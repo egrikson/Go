@@ -20,6 +20,10 @@
 // исходном срезе взялся хвост 7 1 0 5.
 //
 // Запуск: go run ./block01/slices-make/task4
+//
+// СНЯТА: задача проверяла алгоритм сжатия, а не тему (make, len/cap) —
+// и при этом запрещала make. Решение compact показано Claude по запросу,
+// main дописан не до конца. На оценку блока не влияет.
 package main
 
 import "fmt"
@@ -27,11 +31,18 @@ import "fmt"
 func main() {
 	data := []int{0, 3, 0, 0, 7, 1, 0, 5}
 
-	// TODO
+	fmt.Println(compact(data))
 }
 
 func compact(s []int) []int {
-	// TODO
+	k := 0
+	for _, v := range s {
+		if v != 0 {
+			s[k] = v
+			k++
+		}
+	}
+	return s[:k]
 }
 
 // --- Почему ---
