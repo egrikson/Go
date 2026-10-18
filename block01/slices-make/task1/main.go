@@ -31,18 +31,30 @@ package main
 import "fmt"
 
 func main() {
-	// TODO
+	s := []int{10, 20, 30, 40, 50, 60}
+	t := s[1:3]
+	u := t[:4]
+	v := u[2:]
+	w := s[:0]
+	x := v[:cap(v)]
+
+	printSlice("s", s)
+	printSlice("t", t)
+	printSlice("u", u)
+	printSlice("v", v)
+	printSlice("w", w)
+	printSlice("x", x)
 }
 
 func printSlice(name string, s []int) {
-	// TODO
+	fmt.Printf("%s len=%d cap=%d %v\n", name, len(s), cap(s), s)
 }
 
 // --- Предсказание (заполнить ДО запуска) ---
 //
 // s len=6 cap=6 [10 20 30 40 50 60]
-// t
-// u
-// v
-// w
-// x
+// t len=2 cap=5 [20 30]
+// u len=4 cap=5 [20 30 40 50]
+// v len=2 cap=3 [40 50]
+// w len=0 cap=6 []
+// x len=3 cap=3 [40 50 60]

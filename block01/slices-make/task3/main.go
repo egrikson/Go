@@ -33,13 +33,35 @@ package main
 import "fmt"
 
 func main() {
-	// TODO
+	grid := makeGrid(3, 4, func(r, c int) int {
+		return r*4 + c + 1
+
+	})
+	fmt.Println("Исходная:")
+	printGrid(grid)
+
+	transposed := makeGrid(len(grid[0]), len(grid), func(r, c int) int {
+		return grid[c][r]
+	})
+	fmt.Println("Транспонированная:")
+	printGrid(transposed)
+
 }
 
 func makeGrid(rows, cols int, f func(r, c int) int) [][]int {
-	// TODO
+	matrix := make([][]int, rows)
+	for i := 0; i < rows; i++ {
+		matrixCols := make([]int, cols)
+		matrix[i] = matrixCols
+		for j := 0; j < cols; j++ {
+			matrix[i][j] = f(i, j)
+		}
+	}
+	return matrix
 }
 
 func printGrid(g [][]int) {
-	// TODO
+	for i := 0; i < len(g); i++ {
+		fmt.Println(g[i])
+	}
 }
