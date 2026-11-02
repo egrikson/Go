@@ -23,15 +23,6 @@
 // запаса «на всякий случай»); исходный срез функция не меняет.
 //
 // Запуск: go run ./block01/slices-make/task2
-//
-// НЕ ДОДЕЛАНО: filterEven написана верно, вывод совпадает, но две проверки
-// из условия в main не выполняются — совпадение случайное.
-//
-//  1. Нет пункта 2: перед печатью «Исходный» записать -1 в первый элемент
-//     результата. Без этого не проверено, что результат — независимая копия.
-//
-//  2. Третий вызов идёт с []int{} — это пустой срез, но не nil. Условие
-//     просит вызвать filterEven(nil); переменную empty после этого убрать.
 package main
 
 import "fmt"
@@ -39,13 +30,16 @@ import "fmt"
 func main() {
 	data := []int{3, 8, 15, 4, 22, 7, 10}
 	odds := []int{1, 3, 5}
-	empty := []int{}
+	var empty []int
 
 	evens := filterEven(data)
 	fromOdds := filterEven(odds)
 	fromEmpty := filterEven(empty)
 
 	fmt.Printf("Чётные: %v len=%d cap=%d\n", evens, len(evens), cap(evens))
+
+	evens[0] = -1
+
 	fmt.Printf("Исходный: %v\n", data)
 	fmt.Printf("Из нечётных: %v len=%d\n", fromOdds, len(fromOdds))
 	fmt.Printf("Из nil: %v len=%d\n", fromEmpty, len(fromEmpty))
