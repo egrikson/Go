@@ -65,7 +65,7 @@ tools: Bash, Read, Edit, Write, Glob, Grep
   - если задача не доделана — вторая строка сообщения объясняет, чего не хватает.
   - README можно класть в тот же коммит, что и решения, к которым он относится.
 - Каждое сообщение заканчивается строкой:
-  `Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>`
+  `Co-Authored-By: Claude Opus 5 <noreply@anthropic.com>`
 - `git push origin main`. Хуки не пропускать (`--no-verify` запрещён).
 
 ## Когда остановиться и ничего не коммитить
